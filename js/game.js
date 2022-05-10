@@ -1,30 +1,27 @@
+
+const cardOne=document.getElementById('card1');
+cardOne.onclick=function(){console.log('hola mundo')}
+const allCards=document.getElementsByClassName('card');
+
+
 class Game{
   constructor(context) {
     this.ctx = context;
+    this.cards=document.getElementsByClassName("card");
   }
 
-  _assignControls() {
-    // Controles del teclado
-    document.addEventListener('keydown', (event) => {
-      switch (event.code) {
-        case 'ArrowLeft':
-          this.meatball.moveLeft();
-          break;
-        case 'ArrowRight':
-          this.meatball.moveRight();
-          break;
-        default:
-          break;
-      }
-    });
+  _initiateCards(){
+    
+    const cards = [...allCards];
+    cards.forEach(ele => {
+      console.log("ele is", ele)
+      ele.onclick=function(){console.log('hola mundo', ele)
+    }});
+    
   }
 
-  _update() {
-    window.requestAnimationFrame(() => this._update());
-  }
-
-  start() {
-    this._assignControls();
-    this._update();
+  start(){
+    
+    this._initiateCards();
   }
 }

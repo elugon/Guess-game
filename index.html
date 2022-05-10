@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styleIndex.css"/>
+  <link rel="stylesheet" href="css/styleGame.css"/>
   <title>Guess Game</title>
 </head>
 <body id="pageOne">
@@ -25,8 +26,30 @@
     </main>
   </div>
 
+  <div id="gameScreen">
+  <article id="upSection">
+    <div class="ledLight" id="leftLed">Red light</div>
+    <div id="title">Guess the Animal</div>
+    <div id="timeLeft">Time: 60s</div>
+    <div class="ledLight" id="rightLed">Red light</div>
+  </article>
+  <article id="downSection">
+    <div class="card" id="card1">Card</div>
+    <div class="card" id="card2">Card</div>
+    <div class="card" id="card3">Card</div>
+    <div class="card" id="card4">Card</div>
+    <div class="card" id="card5">Card</div>
+    <div class="card" id="card6">Card</div>
+    <div class="card" id="card7">Card</div>
+    <div class="card" id="card8">Card</div>
+    <div class="card" id="card9">Card</div>
+    <div class="card" id="card10">Card</div>
+    <div class="card" id="card11">Card</div>
+    <div class="card" id="card12">Card</div>
+  </article>
+</div>
   <canvas id="canvas" width="1000" height="600" class="hidden"></canvas>
-
+  <script src="js/assets.js"></script>
   <script src="js/game.js"></script>
   <script src="js/scripts.js"></script>
 </body>
