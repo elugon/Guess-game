@@ -5,8 +5,7 @@
 
 /* Basic styles, change according to your style */
 
-#start-page,
-#lose-page {
+#start-page {
   height: 800px;
   width: 1200px;
   display: flex;
