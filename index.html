@@ -5,14 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css"/>
-  <title>Meatball</title>
+  <title>Guess Game</title>
 </head>
-<body>
-
-  <div id="start-page">
+<body id="pageOne">
+    <div id="start-page">
     <main>
-      <h1>Title of the game</h1>
-      <p>Instructions / Description</p>
+      <video id="background-video" autoplay loop muted poster="images/jungle.jpg">
+        <source src="images/backgroundVideoMainPage.mp4" type="video/mp4">
+        </video>
+      <h1 id="titleGame">Guess the Animals</h1>
+      <p id="instructionsGame">Instructions</p>
+      <ol id="allInstructions"><li>Click on each card and be able to see it.</li>
+        <li>If the user clicks on 3 cards of the same type in a row this cards will get pop of the table.</li>
+      <li>If the user pop off all the cards from the table before the counter reach 0 seg the user will win the game, otherwise, it will loose.</li>
+      <li>If only one click has been done that first card remains visible.</li>
+      <li>If the second card dont belong to the type-card of the first card clicked both cards return to a not visible state</li>
+    </ol>
       <button id="start">START</button>
     </main>
   </div>
