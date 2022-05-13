@@ -1,63 +1,22 @@
-const cardArray=[
+const cardAssets=[
     {
-        content: 'elephant',
+        content: 'chameleon',
         status: 'down',
-        id: 1
+        id: 1,
+        image: '/images/chameleonCard.jpg'
+    },
+    {
+        content: 'seal',
+        status: 'down',
+        id: 2,
+        image: '/images/sealCard.jpg' 
     },
     {
         content: 'elephant',
         status: 'down',
-        id: 1
-    },
-    {
-        content: 'elephant',
-        status: 'down',
-        id: 1
-    },
-    {
-        content: 'elephant',
-        status: 'down',
-        id: 1
-    },
-    {
-        content: 'elephant',
-        status: 'down',
-        id: 1
-    },
-    {
-        content: 'elephant',
-        status: 'down',
-        id: 1
-    },
-    {
-        content: 'elephant',
-        status: 'down',
-        id: 1
-    },
-    {
-        content: 'elephant',
-        status: 'down',
-        id: 1
-    },
-    {
-        content: 'elephant',
-        status: 'down',
-        id: 1
-    },
-    {
-        content: 'elephant',
-        status: 'down',
-        id: 1
-    },
-    {
-        content: 'elephant',
-        status: 'down',
-        id: 1
-    },
-    {
-        content: 'elephant',
-        status: 'down',
-        id: 1
-    },
+        id: 3,
+        image: '/images/elephantCard.jpg'
+    }
+  ];
 
-]
+  
