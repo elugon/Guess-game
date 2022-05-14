@@ -1,7 +1,3 @@
-const cardOne=document.getElementById(`card${this.cardId}`);
-const allCards=document.getElementsByClassName('card');
-let cardArray=[];
-
 class Game{
   constructor(context) {
     this.ctx = context;
@@ -13,47 +9,52 @@ class Game{
     this.seal=0;
     this.elephant=0;
     this.cardId=1;
+    this.cardArray=[];
+    this.cardOne=document.getElementById(`card${this.cardId}`);
+  }
+
+  
+  shuffleCards() {
+
+    while(this.cardArray.length<12)
+    {
+      let randomCard=Math.floor(Math.random()*4);
+      if(randomCard===0&&this.chamelon<4){
+        this.cardArray.push(cardAssets[0]);
+        this.chamelon++;
+        this.cardId++;
+      } 
+      
+      else if(randomCard===1&&this.seal<4){
+        this.cardArray.push(cardAssets[1]);
+        this.seal++;
+        this.cardId++;
+
+      } 
+      
+      else if(randomCard===2&&this.elephant<4){
+        this.cardArray.push(cardAssets[2]);
+        this.elephant++;
+        this.cardId++;
+
+      }
+    }
+    console.log(this.cardArray)
   }
 
   _initiateCards(){
-    const cards = [...allCards];
-    cards.forEach(ele => {
-      ele.onclick=function(){console.log('hola mundo')
+
+    let allCards=document.getElementsByClassName('card');
+    let cards = [...allCards];
+    let desk=this.cardArray;
+    cards.forEach((ele,i) =>{ele.onclick=function(){console.log(desk[i])}});
+    cards.forEach((ele,i) =>{ele.onclick=function(){ele.setAttribute('background-image',`url(${desk[i].image})`)}});
+
+  }
   
-        
-    }});
-    
-  }
-
-  shuffleCards() {
-
-    while(this.chamelon!==4&&this.seal!==4&&this.elephant!==4)
-    {
-      let randomCard=Math.floor(Math.random()*3);
-      if(randomCard===1&&this.chamelon<=4)
-      {
-        cardArray.push(cardAssets[0][0]);
-        this.chamelon++;
-        this.cardId++;
-      } else if(randomCard===2&&this.seal<=4)
-      {
-        cardArray.push(cardAssets[1][1]);
-        this.seal++;
-        this.cardId++;
-      } else if(randomCard===1&&this.elephant<=4)
-      {
-        cardArray.push(cardAssets[2][2]);
-        this.elephant++;
-        this.cardId++;
-      }
-    }
-    console.log(cardArray)
-  }
-
 
   start(){
-    
-    this._initiateCards();
     this.shuffleCards();
+    this._initiateCards();
   }
 }
