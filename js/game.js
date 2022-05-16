@@ -47,11 +47,20 @@ class Game{
     let allCards=document.getElementsByClassName('card');
     let cards = [...allCards];
     let desk=this.cardArray;
-    cards.forEach((ele,i) =>{ele.onclick=function(){console.log(desk[i])}});
-    cards.forEach((ele,i) =>{ele.onclick=function(){ele.setAttribute('background-image',`url(${desk[i].image})`)}});
+    cards.forEach((ele,i) =>{ele.onclick=function(){
+      //ele.style = 'background: none'
+      ele.innerText=(desk[i].content)
+      ele.style=` background-image: url(${desk[i].image})`
+    }});
+    //cards.forEach((ele,i) =>{ele.onclick=function(){ele.setAttribute('background-image',`url(${desk[i].image})`)}});
 
   }
   
+  userActions(){
+
+    
+
+  }
 
   start(){
     this.shuffleCards();
