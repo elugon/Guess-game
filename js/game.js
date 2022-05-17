@@ -42,25 +42,50 @@ class Game{
     console.log(this.cardArray)
   }
 
-  _initiateCards(){
+  /*_initiateCards(){
 
     let allCards=document.getElementsByClassName('card');
     let cards = [...allCards];
     let desk=this.cardArray;
-    cards.forEach((ele,i) =>{ele.onclick=function(){
-      //ele.style = 'background: none'
-      ele.innerText=(desk[i].content)
-      ele.style=` background-image: url(${desk[i].image})`
+    let pickOne="";
+    cards.forEach((ele,i,arr) =>{ele.onclick=function(){
+      ele.innerText=(desk[i].content);
+      ele.style=` background-image: url(${desk[i].image})`;
+      pickOne=desk[i].content;
+      console.log(pickOne)
+      if(arr[i-1]!==undefined){
+      if(pickOne==arr[i-1].innerText){
+        console.log('yeah')
+        pickOne="";
+      }}
     }});
-    //cards.forEach((ele,i) =>{ele.onclick=function(){ele.setAttribute('background-image',`url(${desk[i].image})`)}});
 
   }
+  */
+
+   _initiateCards(){
+
+    let allCards=document.getElementsByClassName('card');
+    let cards = [...allCards];
+    let desk=this.cardArray;
+    let pickUser=[];
+    let clicksByUser=0;
+    cards.forEach((ele,i) =>{ele.onclick=function(){
+      ele.innerText=(desk[i].content);
+      ele.style=` background-image: url(${desk[i].image})`;
+      pickUser.push(desk[i].content);
+      clicksByUser++
+      console.log(clicksByUser);
+      console.log(cards)
+   }
+  })
+ 
+
+
+
+}
   
-  userActions(){
-
-    
-
-  }
+   
 
   start(){
     this.shuffleCards();
