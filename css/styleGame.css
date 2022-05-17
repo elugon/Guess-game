@@ -95,4 +95,14 @@ padding-right: 100px;
     background-color: white;
 }
 
+#winning-page{
+display: none;
+}
+
+#youWin{
+    color: white;
+    font-size: 125px;
+    margin-left: 50px;
+    margin-top: 25px;
+}
 

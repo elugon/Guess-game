@@ -1,3 +1,17 @@
+const startPage = document.getElementById('start-page');
+const gamePage=document.getElementById('gameScreen')
+const startButton = document.getElementById('start');
+const winningPage=document.getElementById('winning-page');
+
+window.onload = function () {
+    startButton.onclick = function () {
+    startPage.style = "display: none";
+    gamePage.style="display:flex"
+    const game=new Game();
+    game.start()
+  }
+}
+
 class Game{
   constructor(context) {
     this.ctx = context;
@@ -11,9 +25,23 @@ class Game{
     this.cardId=1;
     this.cardArray=[];
     this.cardOne=document.getElementById(`card${this.cardId}`);
+    this.clickedCards=[];
+    this.finishedCards=[];
+    this.time=document.getElementById("timeLeft");
   }
 
+  timeGoes(){
+  let counter=50;
+  this.time.innerText=`${counter} s`;
   
+  
+  setInterval(function () {
+    counter-=1;
+
+    console.log(counter)}, 1000);
+  }
+
+
   shuffleCards() {
 
     while(this.cardArray.length<12)
@@ -39,56 +67,64 @@ class Game{
 
       }
     }
-    console.log(this.cardArray)
   }
-
-  /*_initiateCards(){
-
-    let allCards=document.getElementsByClassName('card');
-    let cards = [...allCards];
-    let desk=this.cardArray;
-    let pickOne="";
-    cards.forEach((ele,i,arr) =>{ele.onclick=function(){
-      ele.innerText=(desk[i].content);
-      ele.style=` background-image: url(${desk[i].image})`;
-      pickOne=desk[i].content;
-      console.log(pickOne)
-      if(arr[i-1]!==undefined){
-      if(pickOne==arr[i-1].innerText){
-        console.log('yeah')
-        pickOne="";
-      }}
-    }});
-
-  }
-  */
 
    _initiateCards(){
 
     let allCards=document.getElementsByClassName('card');
     let cards = [...allCards];
     let desk=this.cardArray;
-    let pickUser=[];
-    let clicksByUser=0;
-    cards.forEach((ele,i) =>{ele.onclick=function(){
+    cards.forEach((ele,i) =>{ele.onclick=()=>{
       ele.innerText=(desk[i].content);
       ele.style=` background-image: url(${desk[i].image})`;
-      pickUser.push(desk[i].content);
-      clicksByUser++
-      console.log(clicksByUser);
-      console.log(cards)
+      if(this.clickedCards.length === 0){
+      this.clickedCards.push(ele);
+      
+      } else{
+       if (this.finishedCards.length < 10){ 
+         console.log(this.finishedCards)
+      
+        if(this._compareCards(ele.innerText)){
+          this.finishedCards.push(this.clickedCards[0])
+          this.finishedCards.push(ele)
+          this.clickedCards=[];
+        } else {
+          const current = this.clickedCards[0];
+          setTimeout(()=>{
+            current.innerText='';
+            current.style=` background-image: url('/images/stockCard.jpg')`;
+            ele.style=` background-image: url('/images/stockCard.jpg')`;
+            ele.innerText='';
+          }, 500);
+        this.clickedCards=[];
+      }}
+        else{
+          this._showWinPage();
+        }  
+              //_showWinPage() esconder game page y mostrar win page 
+      }
+              
    }
-  })
- 
-
-
-
+  })  
 }
+  _showWinPage(){
+    setTimeout(() => {
+      console.log('juego terminado');
+    gamePage.style = "display: none";
+    winningPage.style="display: flex";
+    }, 500);
+      }
+_compareCards(currentCard) {
   
-   
+  return this.clickedCards.find((elem) => {
+    return elem.innerText === currentCard
+  });
+}
 
   start(){
     this.shuffleCards();
     this._initiateCards();
+    this._compareCards();
+    this.timeGoes();
   }
 }
