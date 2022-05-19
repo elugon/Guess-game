@@ -8,42 +8,11 @@ window.onload = function () {
     startPage.style = "display: none";
     gamePage.style="display:flex"
     const game=new Game();
-    game.start()
+    game.start();
   }
 }
 
-class deskBuilder{
-  constructor(){
-    this.typeOfCards=[0,0,0];
-    this.cardArray=[];
-  }
-  shuffleCards() {
-
-    while(this.cardArray.length<12)
-    {
-      let randomCard=Math.floor(Math.random()*4);
-      if(randomCard===0&&this.typeOfCards[0]<4){
-        this.cardArray.push(cardAssets[0]);
-        this.typeOfCards[0]++;
-      } 
-      
-      else if(randomCard===1&&this.typeOfCards[1]<4){
-        this.cardArray.push(cardAssets[1]);
-        this.typeOfCards[1]++;
-
-      } 
-      
-      else if(randomCard===2&&this.typeOfCards[2]<4){
-        this.cardArray.push(cardAssets[2]);
-        this.typeOfCards[2]++;
-
-      }
-    }
-  }
-}
-
-
-class Game extends deskBuilder{
+class Game extends DeskBuilder{
   constructor() {
     super()
     this.cards=document.getElementsByClassName("card");
@@ -62,7 +31,7 @@ class Game extends deskBuilder{
     clearInterval(timmer)};
     }, 1000);
 
-    
+
     }
 
    _initiateCards(){
