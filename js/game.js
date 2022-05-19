@@ -53,14 +53,17 @@ class Game extends deskBuilder{
   }
 
   timeGoes(){
-  let counter=50;
+  let counter=30;
   this.time.innerText=`${counter} s`;
-  
-    setInterval(function () {
-      counter-=1;
-  
-      console.log(counter)}, 1000);
-  }
+  let timmer=setInterval(()=> {
+    counter-=1;
+    this.time.innerText=`${counter} s`;
+    if(counter==0){
+    clearInterval(timmer)};
+    }, 1000);
+
+    
+    }
 
    _initiateCards(){
 
