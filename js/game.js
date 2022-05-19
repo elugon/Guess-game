@@ -12,19 +12,41 @@ window.onload = function () {
   }
 }
 
-class Game{
-  constructor(context) {
-    this.ctx = context;
-    this.cards=document.getElementsByClassName("card");
-    this.pickedCards = [];
-    this.pairsClicked = 0;
-    this.pairsGuessed = 0;
-    this.chamelon=0;
-    this.seal=0;
-    this.elephant=0;
-    this.cardId=1;
+class deskBuilder{
+  constructor(){
+    this.typeOfCards=[0,0,0];
     this.cardArray=[];
-    this.cardOne=document.getElementById(`card${this.cardId}`);
+  }
+  shuffleCards() {
+
+    while(this.cardArray.length<12)
+    {
+      let randomCard=Math.floor(Math.random()*4);
+      if(randomCard===0&&this.typeOfCards[0]<4){
+        this.cardArray.push(cardAssets[0]);
+        this.typeOfCards[0]++;
+      } 
+      
+      else if(randomCard===1&&this.typeOfCards[1]<4){
+        this.cardArray.push(cardAssets[1]);
+        this.typeOfCards[1]++;
+
+      } 
+      
+      else if(randomCard===2&&this.typeOfCards[2]<4){
+        this.cardArray.push(cardAssets[2]);
+        this.typeOfCards[2]++;
+
+      }
+    }
+  }
+}
+
+
+class Game extends deskBuilder{
+  constructor() {
+    super()
+    this.cards=document.getElementsByClassName("card");
     this.clickedCards=[];
     this.finishedCards=[];
     this.time=document.getElementById("timeLeft");
@@ -34,39 +56,10 @@ class Game{
   let counter=50;
   this.time.innerText=`${counter} s`;
   
+    setInterval(function () {
+      counter-=1;
   
-  setInterval(function () {
-    counter-=1;
-
-    console.log(counter)}, 1000);
-  }
-
-
-  shuffleCards() {
-
-    while(this.cardArray.length<12)
-    {
-      let randomCard=Math.floor(Math.random()*4);
-      if(randomCard===0&&this.chamelon<4){
-        this.cardArray.push(cardAssets[0]);
-        this.chamelon++;
-        this.cardId++;
-      } 
-      
-      else if(randomCard===1&&this.seal<4){
-        this.cardArray.push(cardAssets[1]);
-        this.seal++;
-        this.cardId++;
-
-      } 
-      
-      else if(randomCard===2&&this.elephant<4){
-        this.cardArray.push(cardAssets[2]);
-        this.elephant++;
-        this.cardId++;
-
-      }
-    }
+      console.log(counter)}, 1000);
   }
 
    _initiateCards(){
@@ -81,9 +74,7 @@ class Game{
       this.clickedCards.push(ele);
       
       } else{
-       if (this.finishedCards.length < 10){ 
-         console.log(this.finishedCards)
-      
+       if (this.finishedCards.length < 10){    
         if(this._compareCards(ele.innerText)){
           this.finishedCards.push(this.clickedCards[0])
           this.finishedCards.push(ele)
@@ -101,7 +92,6 @@ class Game{
         else{
           this._showWinPage();
         }  
-              //_showWinPage() esconder game page y mostrar win page 
       }
               
    }
@@ -109,7 +99,6 @@ class Game{
 }
   _showWinPage(){
     setTimeout(() => {
-      console.log('juego terminado');
     gamePage.style = "display: none";
     winningPage.style="display: flex";
     }, 500);
