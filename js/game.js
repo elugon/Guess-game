@@ -39,7 +39,7 @@ class Game extends DeskBuilder{
     leftLed.style='background-color: red;';
     rightLed.style='background-color: red;';
     }
-    if(counter==0){
+    if(counter==0&&this.finishedCards.length < 10){
     gamePage.style="display:none"
     looserPage.style = "display: flex";
       clearInterval(timmer)};
