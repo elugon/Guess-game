@@ -2,7 +2,7 @@
     display: none;
     flex:content;
     flex-direction: column;
-    height:100%;
+    height:80%;
     width:auto;
     border-bottom-color: black;
     border-radius: 5px;
@@ -11,6 +11,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin: 10px auto;
+    }
+
+    #pageOne{
+        height: 100vh;
     }
 
 #upSection{

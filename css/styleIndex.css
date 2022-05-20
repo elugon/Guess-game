@@ -6,8 +6,8 @@
 /* Basic styles, change according to your style */
 
 #start-page {
-  height: 800px;
-  width: 1200px;
+  height: 600px;
+  width: 900px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +43,9 @@
 
 #allInstructions{
   font-size: 22px;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 #start{

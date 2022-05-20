@@ -2,6 +2,9 @@ const startPage = document.getElementById('start-page');
 const gamePage=document.getElementById('gameScreen')
 const startButton = document.getElementById('start');
 const winningPage=document.getElementById('winning-page');
+const leftLed=document.getElementById('leftLed');
+const rightLed=document.getElementById('rightLed');
+
 
 window.onload = function () {
     startButton.onclick = function () {
@@ -27,11 +30,16 @@ class Game extends DeskBuilder{
   let timmer=setInterval(()=> {
     counter-=1;
     this.time.innerText=`${counter} s`;
+    if(counter%2!==0){
+    leftLed.style='background-color: blue;';
+    rightLed.style='background-color: blue;';
+    } if(counter%2==0){
+    leftLed.style='background-color: red;';
+    rightLed.style='background-color: red;';
+    }
     if(counter==0){
     clearInterval(timmer)};
     }, 1000);
-
-
     }
 
    _initiateCards(){

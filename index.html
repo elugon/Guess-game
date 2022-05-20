@@ -17,8 +17,8 @@
       <h1 id="titleGame">Guess the Animals</h1>
       <p id="instructionsGame">Instructions</p>
       <ol id="allInstructions"><li>Click on each card and be able to see it.</li>
-        <li>If the user clicks on 3 cards of the same type in a row this cards will get pop of the table.</li>
-      <li>If the user pop off all the cards from the table before the counter reach 0 seg the user will win the game, otherwise, it will loose.</li>
+        <li>If the user clicks on 2 cards of the same type in a row this cards will stay visible on the table.</li>
+      <li>If the user pop put visible all the cards from the table before the counter reach 0 seg the user will win the game, otherwise, it will loose.</li>
       <li>If only one click has been done that first card remains visible.</li>
       <li>If the second card dont belong to the type-card of the first card clicked both cards return to a not visible state</li>
     </ol>
@@ -28,10 +28,10 @@
 
   <div id="gameScreen">
   <div id="upSection">
-    <div class="ledLight" id="leftLed">Red light</div>
+    <div class="ledLight" id="leftLed"></div>
     <div id="title">Guess the Animal</div>
     <div id="timeLeft">60</div>
-    <div class="ledLight" id="rightLed">Red light</div>
+    <div class="ledLight" id="rightLed"></div>
   </div>
   <div id="downSection">
     <div class="card" id="card1"></div>
