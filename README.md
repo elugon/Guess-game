@@ -1,11 +1,10 @@
-# Game name
+# Guess the Animals
 
-<!-- When you finish, add a nice screenshot of your game -->
-<!--[<img src="./img/page.png">]()-->
+<img src="/images/gamePreview.png">
 
 ## Description
 
-Game's purpose and description
+the purpose of the game is to guess all the cards on the table before the counter reaches zero.
 
 ## User stories MVP
 
@@ -13,11 +12,11 @@ Minimum user stories:
 
 - User can ...
 
-- Click on each card and be able to see it
-- If only one click has been done that first card remains visible
-- If the second card dont belong to the type-card of the first card clicked both cards return to a not visible state
-- if the user clicks on 3 cards of the same type in a row this cards will get pop of the table
-- if the user pop off all the cards from the table before the counter reach 0 seg the user will win the game, otherwise, it will loose.
+- Click on each card and be able to see it.
+- If only one click has been done that first card remains visible.
+- If the second card dont belong to the type-card of the first card clicked both cards return to a not visible state.
+- if the user clicks on 2 cards of the same type in a row this cards will get a permanent visible state.
+- if the user pop get visible all the cards on the table before the counter reach 0 seg the user will win the game, otherwise, it will loose.
 
 
 ## User stories Backlog
@@ -27,20 +26,18 @@ Minimum user stories:
 
 - lets Javascript...
 
-- create an array (of cards) (4 posibble options)
+- create an array (of cards) (3 posibble options)
 - create a math random wich will trow the card on the selected spot on the screen
-- create 4 counters wich will help to set the cards on the table
+- create 3 counters wich will help to set the cards on the table
 
 - 
 
 ## File structure
 
 - <code>game.js</code>: contains all the elements for the game to work. Methods: start(), \_update()
-- <code>scripts.js</code>: contains all the DOM manipulation code to start the game
+- <code>deskBuilder.js</code>: contains all the logic for random deck generation.
 
 ## Useful links
 
-<!-- When you finish, add these links and commit -->
-
-- [Presentation slides]()
+- [https://slides.com/elugonzalez/ellipse]()
 - [Deployed game]()
