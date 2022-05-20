@@ -103,7 +103,18 @@ padding-right: 100px;
 display: none;
 }
 
+#looser-page{
+    display: none;
+    }
+
 #youWin{
+    color: white;
+    font-size: 125px;
+    margin-left: 50px;
+    margin-top: 25px;
+}
+
+#youLost{
     color: white;
     font-size: 125px;
     margin-left: 50px;

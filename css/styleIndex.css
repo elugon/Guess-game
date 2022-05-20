@@ -3,8 +3,6 @@
   padding: 0;
 }
 
-/* Basic styles, change according to your style */
-
 #start-page {
   height: 600px;
   width: 900px;
@@ -52,7 +50,7 @@
   font-size: 35px;
 }
 
-#background-video{
+.background-video{
   width: 100%;
   height: 100%;
   object-fit: cover;

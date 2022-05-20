@@ -4,6 +4,8 @@ const startButton = document.getElementById('start');
 const winningPage=document.getElementById('winning-page');
 const leftLed=document.getElementById('leftLed');
 const rightLed=document.getElementById('rightLed');
+const looserPage=document.getElementById('looser-page');
+
 
 
 window.onload = function () {
@@ -38,7 +40,9 @@ class Game extends DeskBuilder{
     rightLed.style='background-color: red;';
     }
     if(counter==0){
-    clearInterval(timmer)};
+    gamePage.style="display:none"
+    looserPage.style = "display: flex";
+      clearInterval(timmer)};
     }, 1000);
     }
 

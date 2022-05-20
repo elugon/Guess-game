@@ -11,7 +11,7 @@
 <body id="pageOne">
     <div id="start-page">
     <main>
-      <video id="background-video" autoplay loop muted poster="images/jungle.jpg">
+      <video class="background-video" autoplay loop muted poster="images/jungle.jpg">
         <source src="images/backgroundVideoMainPage.mp4" type="video/mp4">
         </video>
       <h1 id="titleGame">Guess the Animals</h1>
@@ -50,8 +50,14 @@
 </div>
 <div id="winning-page">
   <div id="youWin">You Have Win!</div>
-    <video id="background-video" autoplay loop muted poster="images/jungle.jpg">
+    <video class="background-video" autoplay loop muted poster="images/jungle.jpg">
       <source src="images/backgroundVideoWinningPage.mp4" type="video/mp4">
+      </video>
+</div>
+<div id="looser-page">
+  <div id="youLost">You Have Lost!</div>
+    <video class="background-video" autoplay loop muted poster="images/jungle.jpg">
+      <source src="images/backgroundVideoLooserPage.mp4" type="video/mp4">
       </video>
 </div>
     <script src="js/assets.js"></script>
